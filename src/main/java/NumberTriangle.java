@@ -63,7 +63,7 @@ public class NumberTriangle {
      * Note: a NumberTriangle contains at least one value.
      */
     public void maxSumPath() {
-        // for fun [not for credit]:
+        // TODO
     }
 
 
@@ -88,8 +88,16 @@ public class NumberTriangle {
      *
      */
     public int retrieve(String path) {
-        // TODO implement this method
-        return -1;
+        NumberTriangle cur = this;
+        for (int i = 0; i < path.length(); i++) {
+            char step = path.charAt(i);
+            if (step == 'l') {
+                cur = cur.left;
+            } else {
+                cur = cur.right;
+            }
+        }
+        return cur.root;
     }
 
     /** Read in the NumberTriangle structure from a file.
